@@ -112,7 +112,7 @@ const OrderTable = () => {
                       href="#"
                       className="flex items-center space-x-5 text-hover-primary text-heading"
                     >
-                      {item.user?.imageURL && (
+                      {/* {item.user?.imageURL && (
                         <Image
                           className="w-[50px] h-[50px] rounded-full"
                           src={item.user.imageURL}
@@ -120,8 +120,8 @@ const OrderTable = () => {
                           width={50}
                           height={50}
                         />
-                      )}
-                      <span className="font-medium">{item?.user?.name}</span>
+                      )} */}
+                      <span className="font-medium">{item?.name}</span>
                     </a>
                   </td>
 
