@@ -43,18 +43,18 @@ const sidebar_menu: Array<ISidebarMenus> = [
     link: "/orders",
     title: "Orders",
   },
-  {
-    id: 5,
-    icon: Leaf,
-    link: "/brands",
-    title: "Brand",
-  },
-  {
-    id: 6,
-    icon: Coupons,
-    link: "/coupon",
-    title: "Coupons",
-  },
+  // {
+  //   id: 5,
+  //   icon: Leaf,
+  //   link: "/brands",
+  //   title: "Brand",
+  // },
+  // {
+  //   id: 6,
+  //   icon: Coupons,
+  //   link: "/coupon",
+  //   title: "Coupons",
+  // },
   {
     id: 7,
     icon: Profile,
@@ -73,17 +73,17 @@ const sidebar_menu: Array<ISidebarMenus> = [
     link: "/our-staff",
     title: "Our Staff",
   },
-  {
-    id: 10,
-    icon: Pages,
-    link: "/dashboard",
-    title: "Pages",
-    subMenus: [
-      { title: "Register", link: "/register" },
-      { title: "Login", link: "/login" },
-      { title: "Forgot Password", link: "/forgot-password" }
-    ],
-  },
+  // {
+  //   id: 10,
+  //   icon: Pages,
+  //   link: "/dashboard",
+  //   title: "Pages",
+  //   subMenus: [
+  //     { title: "Register", link: "/register" },
+  //     { title: "Login", link: "/login" },
+  //     { title: "Forgot Password", link: "/forgot-password" }
+  //   ],
+  // },
 ];
 
 export default sidebar_menu;
