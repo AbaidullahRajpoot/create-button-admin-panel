@@ -130,21 +130,19 @@ const ProductSubmit = () => {
             </div>
           </div>
 
-          <div className="bg-white px-8 py-8 rounded-md mb-6">
+          {/* <div className="bg-white px-8 py-8 rounded-md mb-6">
             <p className="mb-5 text-base text-black">Product Tags</p>
-            {/* tags start */}
             <div className="grid grid-cols-1 sm:grid-cols-1 gap-3 mb-5">
               <Tags tags={tags} setTags={setTags} />
             </div>
-          </div>
+          </div> */}
 
-          <div className="bg-white px-8 py-8 rounded-md mb-6">
+          {/* <div className="bg-white px-8 py-8 rounded-md mb-6">
             <p className="mb-5 text-base text-black">Product Colors</p>
-            {/* tags start */}
             <div className="grid grid-cols-1 sm:grid-cols-1 gap-3 mb-5">
               <Colors colors={colors} setColors={setColors} />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <button className="tp-btn px-5 py-2 mt-5" type="submit">
