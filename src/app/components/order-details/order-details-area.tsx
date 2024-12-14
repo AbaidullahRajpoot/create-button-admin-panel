@@ -10,7 +10,14 @@ import { notifyError } from "@/utils/toast";
 const OrderDetailsArea = ({ id }: { id: string }) => {
   const { data: orderData, isLoading, isError } = useGetSingleOrderQuery(id);
   const printRef = useRef<HTMLDivElement | null>(null);
-
+  const downloadImage = (url: string) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = url.split('/').pop() || 'download';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   // decide what to render
   let content = null;
 
@@ -109,6 +116,7 @@ const OrderDetailsArea = ({ id }: { id: string }) => {
                       <tr className="border-b border-gray6 text-tiny">
                         <td className="pl-3 py-3 text-tiny text-textBody uppercase font-semibold">SR.</td>
                         <td className="pr-8 py-3 text-tiny text-textBody uppercase font-semibold">Product Title</td>
+                        <td className="pr-8 py-3 text-tiny text-textBody uppercase font-semibold">Image</td>
                         <td className="pr-8 py-3 text-tiny text-textBody uppercase font-semibold text-center">QUANTITY</td>
                         <td className="pr-3 py-3 text-tiny text-textBody uppercase font-semibold text-center">ITEM PRICE</td>
                         <td className="pr-3 py-3 text-tiny text-textBody uppercase font-semibold text-right">AMOUNT</td>
@@ -122,6 +130,11 @@ const OrderDetailsArea = ({ id }: { id: string }) => {
                           </td>
                           <td className="bg-white border-b border-gray6 px-3 pl-0 py-3 text-start">
                             {item.title}
+                          </td>
+                          <td className="bg-white border-b border-gray6 px-3 pl-0 py-3 text-start">
+                            <button onClick={() => downloadImage("https://create-button-admin-panel.vercel.app/assets/img/logo/logo.png")}>
+                              <img width={100} height={100} src={orderData.image.url} alt="order" />
+                            </button>
                           </td>
                           <td className="bg-white border-b border-gray6 px-3 py-3 font-bold text-center">
                             {item.orderQuantity}
@@ -139,6 +152,7 @@ const OrderDetailsArea = ({ id }: { id: string }) => {
                 </div>
               </div>
             </div>
+            
             <div className="border border-slate-200 rounded-xl p-8 py-6">
               <div className="flex lg:flex-row md:flex-row flex-col justify-between">
                 <div className="mb-3 md:mb-0 lg:mb-0  flex flex-col sm:flex-wrap">
@@ -151,20 +165,28 @@ const OrderDetailsArea = ({ id }: { id: string }) => {
                 </div>
                 <div className="mb-3 md:mb-0 lg:mb-0  flex flex-col sm:flex-wrap">
                   <span className="mb-1 font-bold text-base uppercase block">
+                    PAYMENT STATUS
+                  </span>
+                  <span className="text-base font-semibold block">
+                    {orderData.paymentStatus}
+                  </span>
+                </div>
+                {/* <div className="mb-3 md:mb-0 lg:mb-0  flex flex-col sm:flex-wrap">
+                  <span className="mb-1 font-bold text-base uppercase block">
                     SHIPPING COST
                   </span>
                   <span className="text-base font-semibold font-heading block">
                     ${orderData.shippingCost}
                   </span>
-                </div>
-                <div className="mb-3 md:mb-0 lg:mb-0  flex flex-col sm:flex-wrap">
+                </div> */}
+                {/* <div className="mb-3 md:mb-0 lg:mb-0  flex flex-col sm:flex-wrap">
                   <span className="mb-1 font-bold font-heading text-base uppercase block">
                     DISCOUNT
                   </span>
                   <span className="text-base text-gray-500 font-semibold font-heading block">
                     ${orderData?.discount}
                   </span>
-                </div>
+                </div> */}
                 <div className="flex flex-col sm:flex-wrap">
                   <span className="mb-1 font-bold text-base uppercase block">
                     TOTAL AMOUNT

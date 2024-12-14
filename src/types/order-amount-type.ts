@@ -31,6 +31,8 @@ export interface Order {
   totalAmount: number;
   shippingOption: string;
   paymentMethod: string;
+  image: object;
+  paymentStatus: string;
   orderNote?: string;
   invoice: number;
   status: string;

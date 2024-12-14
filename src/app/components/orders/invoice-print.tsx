@@ -113,13 +113,11 @@ const InvoicePrint = ({ orderData }: IPropType) => {
       </div>
       {/* details table */}
       
-      
       {/* details table */}
       <div className="grid grid-cols-12 gap-6 px-6 py-6">
         <div className="col-span-12">
           <div className="bg-white border border-slate-200 px-4">
             <div className="relative overflow-x-auto mx-4">
-            {orderData?.image?.url}
               <table className="w-full text-base text-left text-gray-500">
                 <tbody>
                   <tr className="bg-white border-b border-gray6 last:border-0 text-start mx-9">
