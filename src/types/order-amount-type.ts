@@ -31,13 +31,17 @@ export interface Order {
   totalAmount: number;
   shippingOption: string;
   paymentMethod: string;
-  image: object;
+  image: IImage;
   paymentStatus: string;
   orderNote?: string;
   invoice: number;
   status: string;
   createdAt?: string;
   updatedAt?: string;
+}
+
+export interface IImage {
+  url: string;
 }
 
 
