@@ -132,7 +132,7 @@ const OrderDetailsArea = ({ id }: { id: string }) => {
                             {item.title}
                           </td>
                           <td className="bg-white border-b border-gray6 px-3 pl-0 py-3 text-start">
-                            <button onClick={() => downloadImage("https://create-button-admin-panel.vercel.app/assets/img/logo/logo.png")}>
+                            <button onClick={() => downloadImage(orderData.image.url)}>
                               <img width={100} height={100} src={orderData.image.url} alt="order" />
                             </button>
                           </td>
