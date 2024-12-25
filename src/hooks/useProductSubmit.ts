@@ -106,18 +106,19 @@ const useProductSubmit = () => {
       title: data.title,
       parent: parent,
       children: children,
-      tags: tags,
+      // tags: tags,
       image: img,
       originalPrice: Number(data.price),
       price: Number(data.price),
       discount: Number(data.discount),
-      relatedImages: relatedImages,
+      // relatedImages: relatedImages,
       description: data.description,
-      brand: brand,
+      // brand: brand,
       category: category,
       unit: data.unit,
       quantity: Number(data.quantity),
-      colors: colors,
+      // colors: colors,
+      sizes: sizes,
     };
 
     const res = await editProduct({ id: id, data: productData })
