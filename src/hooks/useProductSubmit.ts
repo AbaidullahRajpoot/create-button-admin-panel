@@ -21,6 +21,7 @@ const useProductSubmit = () => {
   const [children, setChildren] = useState<string>('');
   const [tags, setTags] = useState<string[]>([]);
   const [colors, setColors] = useState<string[]>([]);
+  const [sizes, setSizes] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(true);
 
   const router = useRouter();
@@ -52,18 +53,19 @@ const useProductSubmit = () => {
       title: data.title,
       parent: parent,
       children: children,
-      tags: tags,
+      // tags: tags,
       image: img,
       originalPrice: Number(data.price),
       price: Number(data.price),
       discount: Number(data.discount),
-      relatedImages: relatedImages,
+      // relatedImages: relatedImages,
       description: data.description,
-      brand: brand,
+      // brand: brand,
       category: category,
       unit: data.unit,
       quantity: Number(data.quantity),
-      colors: colors,
+      // colors: colors,
+      sizes: sizes,
     };
     console.log('productData-------------------..>', productData)
     if (!img) {
@@ -156,11 +158,13 @@ const useProductSubmit = () => {
     setChildren,
     setTags,
     setColors,
+    setSizes,
     setRelatedImages,
     tags,
     isSubmitted,
     relatedImages,
     colors,
+    sizes,
   };
 };
 

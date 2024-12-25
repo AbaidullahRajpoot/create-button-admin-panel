@@ -41,24 +41,25 @@ export interface IAddProduct {
   title: string;
   parent: string;
   children: string;
-  tags: string[];
+  // tags: string[];
   image: string;
   originalPrice: number;
   price: number;
   discount?: number;
-  relatedImages: string[];
+  // relatedImages: string[];
   description: string;
-  brand: {
-    name:string;
-    id:string;
-  };
+  // brand: {
+  //   name:string;
+  //   id:string;
+  // };
   category: {
     name:string;
     id:string;
   };
   unit: string;
   quantity: number;
-  colors: string[];
+  // colors: string[];
+  sizes: string[];
   type?: string;
   itemInfo?: string;
   status?: string;
